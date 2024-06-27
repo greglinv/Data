@@ -29,14 +29,15 @@ def inspect_dataframes(dataframes):
         print(df.head())
         print("\n")
 
-def compute_hash(data):
+def compute_hash(hex_data):
     """
-    Computes SHA-256 hash of the given data.
+    Computes SHA-256 hash of the given hexadecimal data.
 
-    :param data: Data to hash.
+    :param hex_data: Hexadecimal data to hash.
     :return: SHA-256 hash.
     """
-    return sha256(data.encode()).hexdigest()
+    binary_data = bytes.fromhex(hex_data)  # Convert hex to binary
+    return sha256(binary_data).hexdigest()
 
 def add_hashes(dataframes):
     """
@@ -51,7 +52,7 @@ def add_hashes(dataframes):
 
 if __name__ == "__main__":
     # Load the CSV files
-    directory_path = r'D:\FSl Data\fslhomes-user000-2015-04-10'
+    directory_path = r'C:\Users\gll4kc\Downloads\fslhomes-user000-2015-04-10'
     fsl_data = load_csv_files(directory_path)
 
     # Inspect the DataFrames
