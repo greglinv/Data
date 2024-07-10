@@ -19,7 +19,7 @@ def plot_hash_distribution(dataframes):
 
 if __name__ == "__main__":
     # Load the CSV files
-    directory_path = r'C:\Users\gll4kc\Downloads\fslhomes-user000-2015-04-10'
+    directory_path = r'D:\FSl Data\fslhomes-user000-2015-04-10'
     fsl_data = load_csv_files(directory_path)
 
     # Add hash columns
